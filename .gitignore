@@ -1,0 +1,21 @@
+# Configuration files with sensitive data
+config.php
+.htpasswd
+rate_limit.json
+
+# Uploaded files
+uploads/*
+!uploads/.gitkeep
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+

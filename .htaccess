@@ -1,0 +1,26 @@
+# Development .htaccess - No HTTPS redirect, No Basic Auth
+# Copy this to .htaccess for local development
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "^(config\.php|\.htpasswd|rate_limit\.json)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# PHP Settings - Increased for large audio files (2+ hours)
+php_value upload_max_filesize 100M
+php_value post_max_size 100M
+php_value max_execution_time 3600
+php_value max_input_time 3600
+php_value memory_limit 512M
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+

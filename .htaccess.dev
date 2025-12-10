@@ -1,0 +1,25 @@
+# Development .htaccess - No HTTPS redirect, No Basic Auth
+# Copy this to .htaccess for local development
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "^(config\.php|\.htpasswd|rate_limit\.json)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# PHP Settings
+php_value upload_max_filesize 25M
+php_value post_max_size 25M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
