@@ -115,3 +115,4 @@ Before deploying to production:
 5. Ensure HTTPS is enabled
 6. Set proper file permissions
 
+

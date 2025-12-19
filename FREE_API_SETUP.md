@@ -99,3 +99,4 @@ Sistem artık 3 farklı AI servisini destekliyor. Ücretsiz kullanım için **Go
 **Daha fazla kullanım için:** OpenAI ($5 kredi ile başlayın)
 **En iyi kalite için:** Claude (ücretli)
 
+
